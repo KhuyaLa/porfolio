@@ -1,0 +1,157 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap);
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+
+main {
+    display: flex;
+    align-items: center;
+}
+
+.work-titles {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: stretch;
+    justify-items: center;
+    justify-content: space-between;
+}
+a {
+    text-decoration: none;
+}
+.work-titles{
+    color: #f2e0df;
+
+}
+.medium {
+    width: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: stretch;
+    justify-content: center;
+    margin: 6px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    color:#bdcdcf;
+    position: relative;
+}
+
+.medium::before {
+    background-color: #8dcdcf;
+    content: '';
+    width: 0%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    position: absolute; 
+    transition: 0.4s ease;   
+}
+.medium:hover::before {
+    width: 100%;
+}
+
+.chosed-medium {
+    font-weight: 500;
+    color: #f2e0df;
+}
+
+.some-info{
+    color: #f2e0df;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: stretch;
+    justify-content: space-between;
+    row-gap: 84px;
+    padding: 24px 80px 0 80px;  
+}
+.describe-img-div{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+.title{
+    width: fit-content;
+    height: 51px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.2px;
+    text-decoration: none;    
+}
+.explain{
+    width: 65%;
+}
+img{
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+
+}
+
+.describe-img {
+    width: 330px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: start;
+    background: url(https://64.media.tumblr.com/3e93d5b40d08400c541bf31723259563/e35484de00261418-b4/s2048x3072/8703f12960eb116db581a4b2abfa1186a525df4d.pnj) no-repeat center center / cover;
+    flex-shrink: 0;
+}
+.work-container {
+    width: 100%;
+    padding: 0 80px;
+}
+.casual.img {
+    border-radius: 8px;
+}
+.works-illustration{
+    display: block;
+    align-content: stretch;
+    columns: 3 300px;
+    column-gap: 1em;
+}
+
+.works-animation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 5em;
+    position: relative;
+}
+.works-animation-columns{
+    display: block;
+    align-content: stretch;
+    columns: 3 300px;
+    column-gap: 1em;
+}
+
+.video-title{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    padding: 0 1dvw;
+    justify-content: space-between;
+    transform: scale(1.5);
+    position: relative;
+}
+.tr {
+    height: 0.1rem;
+    width: 0.1rem;
+    background-color: #8dcdcf;
+    border-radius: 50%;
+}
+video {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+}
