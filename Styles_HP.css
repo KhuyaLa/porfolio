@@ -630,6 +630,21 @@ footer {
   .body-medium-light{
     font-size:14px;
   }
+  .about-me-description {
+    font-size: 14px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .experiences-title {
+    font-size: 18px;
+  }
+  .Title_small {
+    font-size: 12px;
+  }
+  .pagelink-font {
+    font-size: 10px;
+  }
 }
 @media  screen and (max-width:600px) {
   .body-medium-light{
