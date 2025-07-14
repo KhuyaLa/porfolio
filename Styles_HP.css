@@ -635,4 +635,20 @@ footer {
   .body-medium-light{
     font-size:10px;
   } 
+  main {
+    padding: 0 40px;
+  }
+  header{
+    padding: 40px;
+  }
+  .footer-text {
+    padding: 0 40px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 400px){
+  .experience-descr{
+    width: 80%;
+    height: auto;
+  }
 }
