@@ -29,7 +29,7 @@ body {
   align-content: stretch;
   justify-content: start;
   row-gap: 92.33px;
-  padding: 64px 0px 0px 0px;
+  padding: 46px 0px 0px 0px;
   z-index: 0;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -83,8 +83,16 @@ header {
     align-items: center;
     align-content: stretch;
     justify-content: space-between;
-    padding: 0px 80px;
-    position: relative; z-index: 1;    
+    padding: 18px 80px 24px 80px;
+    position:sticky; 
+    top: 0;
+    z-index: 2;
+    background-color: transparent; /* Initial background */
+    transition: background-color 0.3s; /* Smooth transition */    
+}
+header.sticky{
+  mask-image: linear-gradient(to bottom, #003332 70%, #00333200 100%);
+  backdrop-filter: blur(10px);
 }
 
 nav {
@@ -130,10 +138,10 @@ nav {
     text-decoration: none;
     text-transform: uppercase;
     color: rgba(189, 205, 207, 1);
-    transition: 60ms ease;
+    transition: 250ms ease;
 }
 /*interact*/
-.pagelink-button,.pagelink-font:hover{
+.pagelink-button .pagelink-font:hover{
   font-weight: 600;
 }
 
@@ -168,10 +176,12 @@ main {
 section {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    align-items: start;
+    align-items: center;
     align-content: stretch;
     justify-content: space-around;
+    gap: 2rem;
 }
 
 article {
@@ -236,9 +246,11 @@ li,.info-row {
     column-gap: 22px;
 }
 /*interact*/
+p.text-node.body-medium-light{
+  transition: 0.25s ease;
+}
 p.text-node.body-medium-light:hover{
   font-weight: 500;
-  transition: 60ms ease;
 }
 .svg-small:hover {
   transform: scale(1.15);
@@ -258,12 +270,34 @@ p {
     padding: 0;
     margin: 0;
 }
+.profile-wrapper{
+  width: 35%;
+  aspect-ratio: 1/1;
+  padding: 5px;
+  border-width: 5px;
+  border-radius: 50%; /* Circle */
+  border: 1px solid #8dcdcf80;;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  transition: 0.25s ease;
+}
+.profile-wrapper:hover {  
+  box-shadow: 0px 0px 20px 0px rgb(31, 107, 80);
+  border: 1px solid #bdcdcfbb;;
+
+}
 .profile {
-    width: 437px;
-    height: 437px;
-    background: url(https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/514142603_638446955923450_4938184635341648201_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFo0RcIuGK4oyJDgjs7uLSevBZRSSMZZIK8FlFJIxlkgnyCXmRzO7uq0yHGo3wfUI9D5sqaL2dzyUHVOblUVSpU&_nc_ohc=ToBsMPt9DkkQ7kNvwGzG23K&_nc_oc=AdnZjBcN3YRmOcrxlFjRM4qT5kfL0Sk2KCgck12tPCPIActX-juxy3ZsBUWaBD6vF4SxEP_svvudi5waUBjMwfdr&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=-3FUS9Y3EuopZhlqn8qMIA&oh=00_AfTL47RA2zcBz4zGFmpEhRECCG0Jn_RLRXO15stRXldkNQ&oe=68756009) no-repeat center center / cover;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: url(https://64.media.tumblr.com/ad710fd0a77ebf85195cfeb07439345f/cf8d0ebb65010be6-f9/s2048x3072/90f7cdfd2d4e82f6d8d411388908d6d6ff74ee1a.pnj) no-repeat center center / cover;
+    background-position-x:right;
+    background-position-y: -10px;    
+    background-size: 115%;
+    background-repeat:unset;
     border-radius: 50%;
-    flex-shrink: 0;
     z-index: 1;
  }
  
@@ -280,14 +314,6 @@ p {
   flex-direction: column;
   flex-wrap: nowrap;
   flex-grow: 1;
-}
-.scroll-dow-75dde0e37c13:hover {
-  gap: 27px;
-  transition: 0.2s;
-}
-.board-75ddd60372f2:hover{
-  gap: 18px;
-  transition: 0.2s;
 }
 
 /* small */
@@ -345,6 +371,7 @@ p {
   flex-direction: row;
   flex-wrap: nowrap;
   flex-grow: 1;
+  transition: 0.5s ease;
 }
 .roll-box-r {
   position: relative;
@@ -358,6 +385,7 @@ p {
   flex-direction: row-reverse;
   flex-wrap: nowrap;
   flex-grow: 1;
+  transition: 300ms ease;
 }
 
 /* big */
@@ -493,7 +521,7 @@ p {
     align-content: stretch;
     justify-content: center;
     column-gap: 44px; 
-    transition: 100ms ease;   
+    transition: 300ms ease;   
 }
 .experiences-title:hover{
   transform: scale(1.05);
@@ -501,8 +529,12 @@ p {
 .experiences-heading:hover .roll-box-l,
 .experiences-heading:hover .roll-box-r {
     gap: 0 50px; /* 100px gap tổng cộng */
-    transition: 60ms ease;
 }
+.experiences-heading:hover .roll-box-l div,
+.experiences-heading:hover .roll-box-r div{
+    transform: rotate(60); /* 100px gap tổng cộng */
+}
+
 .jobs {
   position: relative;
   width: 100%;
@@ -543,7 +575,14 @@ p {
   flex-grow: 1;
   grid-column: auto;
   grid-row: auto;
+  transition: 0.25s;
 }
+.experience:hover {
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 20px 0px rgba(31, 107, 80, 1);
+  background: #013e3381;
+}
+
 .infor{
     display: flex;
     flex-direction: column-reverse;
@@ -601,17 +640,6 @@ footer {
 }
 
 @media screen and (max-width:1400px) {
-    section {
-      flex-direction: column;
-      gap: 5rem;
-      align-items: center;
-    }
-    .profile{
-      width:100%;
-      max-width: 437px;
-      height: fit-content;
-      aspect-ratio: 1/1;
-    }
     .about-me-description{
       width: 100%;
     }
@@ -624,6 +652,19 @@ footer {
     }
     .scroll-dow-75dde0e37c13{
       transform: scaleX(0.5);
+    }
+}
+@media screen and (max-width:1080px) {
+    section {
+      flex-direction: column;
+      gap: 5rem;
+      align-items: center;
+    }
+    .profile-wrapper{
+      width:100%;
+      max-width: 437px;
+      height: fit-content;
+      aspect-ratio: 1/1;
     }
 }
 @media  screen and (max-width:700px) {
