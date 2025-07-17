@@ -1,0 +1,116 @@
+/*::-webkit-scrollbar {
+    height: 10px;
+    width: 80%;
+    position: absolute;
+}
+
+::-webkit-scrollbar-track {
+    background: #00333200;
+    width: 4px;
+}
+::-webkit-scrollbar-thumb {
+    background: #0a6b5aFF;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(13, 123, 96);
+    border-radius: 8px;
+} */
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.album {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    align-content: stretch;
+    justify-content: start;
+    gap: 12px;
+}
+.album-head {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    align-content: stretch;
+    justify-content: space-between;
+    color: #bdcdcf !important;
+}
+.see-more-click {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+a {
+    text-decoration: none;
+    color:currentColor;
+}
+.arrowright {
+    display: flex;
+    align-content: center;
+}
+.album-title-frame {
+    width: fit-content;
+    border-radius: 4px;
+    border: 1px solid #0a6b5aFF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+}
+
+.swiper-slide > video {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 4px;
+    object-fit: cover;
+}
+.swiper-slide > img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.vid-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper {
+    width: 100%;
+    height: fit-content;
+    padding: 1.5em;
+    background-color: rgba(4, 74, 59, 0.645);
+    border-radius: 4px;
+}
+
+.swiper-slide-button {
+    transform: scale(0.75);
+    color: #bdcdcf;
+    width: fit-content;
+    height: fit-content;
+    padding: 1em;
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+    background: #034c366f;
+}
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.swiper-pagination-bullet {
+    background: #bdcdcf;
+    width: 5px;
+    height: 5px;
+}
