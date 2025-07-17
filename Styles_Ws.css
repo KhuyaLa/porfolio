@@ -114,7 +114,7 @@ img{
     width: 100%;
     gap: 1rem;
 }
-.illus {
+.works-illustration > img {
     border-radius: 4px;
 }
 .works-illustration{
@@ -126,6 +126,7 @@ img{
 
 .works-animation {
     width: 100%;
+    height: fit-content;
     display: flex;
     align-items: end;
     align-content: stretch;
@@ -133,6 +134,9 @@ img{
     gap: 24px;
     padding-bottom: 5em;
     position: relative;
+}
+.works-animation > video {
+    border-radius: 8px;
 }
 .left-video{
     display: flex;
@@ -157,13 +161,12 @@ img{
     height: 100%;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: start;
     align-content: stretch;
     justify-content: end;
     gap: 64px;
     color: #bdcdcf;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .video-info-right {
@@ -193,33 +196,39 @@ img{
     align-items: center;
     font-size: 36px;
     width: 100%;
-    padding: 0 63px 0 0;
     justify-content: space-between;
     color: #f2e0df;
+    position: relative;
 }
-.video-title-left {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 36px;
+.video-title::after{
+    content: '';
     width: 100%;
-    padding: 0 0 0 63px;
-    justify-content: space-between;
-    color: #f2e0df;
+    height: 1px;
+    background: #bdcdcf;
+    opacity: 50%;
+    position: absolute;
+    bottom: -50%;
+    left: 0;
 }
 .tr {
-    height: 0.1rem;
-    width: 0.1rem;
+    height: 2px;
+    width: 2px;
     background-color: #8dcdcf;
     border-radius: 50%;
+    margin: 0.1rem;
 }
 video {
     display: block;
     margin-bottom: 1em;
     width: 100%;
+    border-radius: 0.1rem;
 }
 .big-vid {
     width: 70%;
+}
+
+img {
+    border-radius: 0.05rem;
 }
 
 @media screen and (max-width:860px) {
@@ -255,12 +264,6 @@ video {
         transform: scale(0.75);
         gap: 3px;
     }
-    .video-title-left {
-        font-size: 24px;
-        display: flex;
-        flex-direction: row;
-        transform: scale(0.75) ;
-    }
     .title{
         font-size: 28px;
     }
@@ -281,12 +284,6 @@ video {
         flex-direction: row;
         transform: scale(0.75);
         gap: 3px;
-    }
-    .video-title-left {
-        font-size: 18px;
-        display: flex;
-        flex-direction: row;
-        transform: scale(0.75) ;
     }
     .title{
         font-size: 28px;
