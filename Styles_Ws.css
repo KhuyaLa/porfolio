@@ -70,8 +70,9 @@ a {
     align-items: stretch;
     align-content: stretch;
     justify-content: space-between;
-    row-gap: 84px;
-    padding: 24px 0px 0 0px;  
+    row-gap: 1rem;
+    padding: 24px 0px 0 0px;
+    position: relative;  
 }
 .title{
     width: fit-content;
@@ -85,7 +86,7 @@ a {
     text-decoration: none;    
 }
 .explain{
-    width: 80%;
+    width: 100%;
 }
 img{
     display: block;
@@ -95,8 +96,8 @@ img{
 }
 
 .describe-img {
-    position: relative;
   width: 30%;
+  height: 100%;
   background: linear-gradient(to right, rgba(0, 51, 50, 0) 7.000000000000001%,#034134 100%);
   border-radius: 4px;
   display: flex;
@@ -104,10 +105,57 @@ img{
   align-content: stretch;
   justify-content: start;
   flex-direction: row;
-  flex-wrap: nowrap;
-  flex-grow: 1;
-  flex-shrink: 0;
+  position: absolute;
+  right: 0;
+  z-index: 0;
 }
+.describe-img div{
+    height: 100%;
+    aspect-ratio: 2/3;
+    position: relative;
+    z-index: 0;
+}
+#img-il{
+    background:#8dcdcf;
+    mask-image: url(https://64.media.tumblr.com/c2b9e6b0fa6df43953601dd1361140fe/63c89bc51636409a-e5/s2048x3072/0fddffe5ad5b75612e863249e0e4eed913bad711.pnj);
+    mask-size: cover;
+    opacity: 50%;
+}
+#img-gr{
+    background:#8dcdcf;
+    mask-image: url(https://64.media.tumblr.com/1af4cd8dea82c86d7ff2f98201744480/63c89bc51636409a-ac/s2048x3072/12262d78f6b1fd3d638ef08d2eca0cbcbb43075a.pnj);
+    mask-size: cover;
+    opacity: 50%;
+}
+#img-an{
+    background:#8dcdcf;
+    mask-image: url(https://64.media.tumblr.com/c5445bb09bdd0c0d2d631db002a359a5/63c89bc51636409a-83/s2048x3072/2da42b04b6b2208ecd56024b26bc0e7d2e052fc9.pnj);
+    mask-size: cover;
+    opacity: 50%;
+}
+#img-3d{
+    background:#8dcdcf;
+    mask-image: url(https://64.media.tumblr.com/86fdf4b5b8059d0f9963d5f84bf125e9/63c89bc51636409a-2e/s2048x3072/89fc9e6bf66dd790cc82443a0858c465ccdef741.pnj);
+    mask-size: cover;
+    opacity: 50%;
+}
+.describe-img::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #44a1ff00;
+    mix-blend-mode: color;
+    position: absolute;
+    top: 0;
+    bottom: 0;    
+    overflow: hidden;
+    z-index: 1;
+}
+.details{
+    height: fit-content;
+    width: 65%;
+}
+
 .work-container {
     display: flex;
     flex-direction: column;
@@ -297,6 +345,21 @@ img {
         align-content: space-between;
     }
     .tr {
-    display: none;
-}
+    display: none;   
+    }
+    .some-info{
+        flex-direction: column;
+        align-items: center;
+    }
+    .describe-img{
+        position: relative;
+        height: fit-content;
+        background: none;
+    }
+    .describe-img div{
+        width: 100%;
+    }
+    .details{
+        width: 100%;
+    }
 }
