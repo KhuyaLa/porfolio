@@ -85,7 +85,7 @@ header {
     padding: 18px 80px 24px 80px;
     position:sticky; 
     top: 0;
-    z-index: 2;
+    z-index: 3;
     background-color: transparent; /* Initial background */
     transition: background-color 0.3s; /* Smooth transition */    
 }
@@ -664,8 +664,8 @@ footer {
   gap: 24px;
 }
 .svg-big {  
-  transition: 0.5s ease;
-  opacity: 80%;
+  transition: 0.25s ease;
+  opacity: 70%;
 }
 .svg-big:hover{
   transform: scale(1.05);
