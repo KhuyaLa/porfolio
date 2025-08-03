@@ -701,6 +701,9 @@ footer {
   .jobs::before{
     width: 20%;
   }
+  .body-frame{
+    row-gap: 3rem;
+  }
 }
 @media screen and (max-width: 860px) {
   .jobs{
@@ -715,6 +718,9 @@ footer {
   .jobs::after{
     width: 60%;
     bottom: -12rem;
+  }
+  .body-frame{
+    row-gap: 2rem;
   }
 }
 @media  screen and (max-width:700px) {
@@ -756,5 +762,8 @@ footer {
   .experience-descr{
     width: 80%;
     height: auto;
+  }
+  .Title_small {
+    font-size: 8px;
   }
 }
