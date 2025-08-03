@@ -23,6 +23,37 @@ main {
     position: relative;
 }
 
+.albums-header{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: baseline;
+    margin-bottom: -1.5rem;
+}
+.albums-title{
+    height: fit-content;
+    min-width: fit-content;
+    font-family: 'Jost';
+    font-style: normal;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #bdcdcf;
+    transition: 0.25s ease;
+    position: relative;
+}
+.albums-header div{
+    content: '';
+    background: #bdcdcf;
+    opacity: 30%;
+    width: 100%;
+    height: 1px;
+    right: 0;
+    bottom: 0.6rem;
+}
+
 .album {
     width: 100%;
     display: flex;
@@ -32,6 +63,7 @@ main {
     justify-content: start;
     gap: 12px;
     z-index: 2;
+    margin-bottom: -2.5rem;
 }
 .album-head {
     width: 100%;
@@ -62,6 +94,7 @@ a {
     border-radius: 4px;
     border: 1px solid #0a6b5aFF;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -91,7 +124,7 @@ a {
     width: 100%;
     height: fit-content;
     padding: 1.5em;
-    background: rgba(4, 74, 59, 0.7);
+    background: rgba(4, 74, 59, 0.6);
     mask-image: #ff0000;
     border-radius: 4px;
     backdrop-filter: blur(3px);
@@ -166,4 +199,55 @@ main::before {
     bottom: -13rem;
     left: 0;
     z-index: 0;
+}
+
+@media  screen and (max-width:720px) {
+  .arrowright {
+    transform: scale(0.75);
+  }
+  .see-more-click{
+    gap: 0;
+  }
+  .swiper-slide-button{
+    transform: scale(0.75);
+  }
+  .swiper-button-next{
+    translate: 0.5rem;
+  }
+  .swiper-button-prev{
+    translate: -0.5rem;
+  }
+  main::before{
+    left: -5rem;
+    bottom: 3em;
+  }
+  main::after{
+    top: -8rem;
+    right: -2em;
+  }
+}
+@media  screen and (max-width:500px) {
+  .album-title-frame{
+    width: fit-content;
+    height: fit-content;
+    padding: 8px 18px;
+  }
+  .arrowright {
+    transform: scale(0.75);
+  }
+  .see-more-click{
+    gap: 0;
+  }
+  .swiper-slide-button{
+    transform: scale(0.5);
+  }
+  .swiper-button-next{
+    translate: 1rem;
+  }
+  .swiper-button-prev{
+    translate: -1rem;
+  }
+  main::after, main::before{
+    width: 80%;
+  }
 }
