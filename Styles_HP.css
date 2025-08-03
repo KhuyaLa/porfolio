@@ -11,7 +11,6 @@ html, body {
 
 body {
   margin: 0px;
-  width: 100vw;
   min-height: 100vh;
   text-decoration: none;
   font-family: 'Montserrat';
@@ -37,7 +36,6 @@ body {
   flex-wrap: nowrap;
   flex-grow: 1;
   z-index: 1;
-  transform-style: preserve-3d;
 }
 .parallax-bg {
   background-image: url(https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/527027405_767312185735199_90127037691610723_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=0i-4OJEA94AQ7kNvwEB8J_H&_nc_oc=AdlmYcuclMgMrE6OC8V4CfxaDyzX9N970ZX3xKMpGyWe99ENUYoCeXzeVd7iJYgVhz5W2mHoea9uG6YS8I5W6NVA&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=AQLx1PgAUSuZztVFbTXZwA&oh=00_AfRaagmXVKvOHIgQYVD71WY9pT63FHdBIw_loGgs2KJjjw&oe=68941C81);
