@@ -323,6 +323,12 @@ img {
         gap: 1rem;
         align-content: space-between;
     }
+    .works-illustration{
+    display: block;
+    align-content: stretch;
+    columns: 2 100px;
+    column-gap: 1em;
+}
 }
 
 @media screen and (max-width:640px) {
