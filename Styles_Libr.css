@@ -93,7 +93,6 @@ a {
     width: fit-content;
     border-radius: 4px;
     border: 1px solid #0a6b5aFF;
-    background-color: #00333279;
     backdrop-filter: blur(2px);
     display: flex;
     flex-wrap: wrap;
