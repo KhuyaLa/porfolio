@@ -69,10 +69,18 @@ a{
 }
 
 /* Header*/
-.logo {
+/*.logo {
   width: 36px;
   height: 36px;
   background: url(https://64.media.tumblr.com/d03ab4ed4071d023f940d5155bcf2a02/6b2835ec384cf491-a5/s2048x3072/45985b6d8fc348195961b9a235dac7c8a308a854.pnj) no-repeat center center / cover;
+  flex-shrink: 0;
+}*/
+.logo {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(to bottom right, #e3b8b8 0%,#ff8128 150%);
+  mask-image: url(https://64.media.tumblr.com/d03ab4ed4071d023f940d5155bcf2a02/6b2835ec384cf491-a5/s2048x3072/45985b6d8fc348195961b9a235dac7c8a308a854.pnj);
+  mask-size: cover;
   flex-shrink: 0;
 }
 header {
