@@ -16,6 +16,7 @@ body {
   font-family: 'Montserrat';
   background: linear-gradient(to bottom, rgba(0, 51, 50, 1) 7.000000000000001%,rgba(3, 76, 54, 1) 100%);
   z-index: 0;
+  overflow-x: hidden;
 }
 .body-frame {
   display: flex;
@@ -38,14 +39,16 @@ body {
   z-index: 1;
 }
 .parallax-bg {
-  background-image: url(https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/527027405_767312185735199_90127037691610723_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=0i-4OJEA94AQ7kNvwEB8J_H&_nc_oc=AdlmYcuclMgMrE6OC8V4CfxaDyzX9N970ZX3xKMpGyWe99ENUYoCeXzeVd7iJYgVhz5W2mHoea9uG6YS8I5W6NVA&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=AQLx1PgAUSuZztVFbTXZwA&oh=00_AfRaagmXVKvOHIgQYVD71WY9pT63FHdBIw_loGgs2KJjjw&oe=68941C81);
+    background: linear-gradient(to bottom right, rgb(0, 53, 46) 0%,rgb(69, 45, 0) 100%);
+  mask-image: url(https://64.media.tumblr.com/90c1133792fdad9e9fa4d0c44dfc0781/b9bd54f440b1986d-4e/s2048x3072/23b227c0b19d3234d25907bc7824d8864d43278c.pnj);
   mix-blend-mode:color-dodge;
-  background-size: cover;
-  filter: blur(2px);
+  mask-size: cover;
+  filter: blur(5px);
   opacity: 100% ;
   width:100vw;
   height: 100vh;
   position:fixed;
+  top:0;
   z-index: 0;
 }
 
@@ -539,7 +542,6 @@ p {
   mask-size: cover;
   background-repeat: no-repeat;
   opacity: 50%;
-  mix-blend-mode: lighten;
   width: 13%;
   aspect-ratio: 2/3;
   position: absolute;
@@ -557,12 +559,14 @@ p {
   position: absolute;
   bottom: -15rem;
   right: 0;
+  z-index: 0;
 }
 
 .jobs {
   position: relative;
   width: 100%;
-  border-radius: 0px 0px 0px 0px;
+  transform-style: preserve-3d;
+  border-radius: 0px;
   display: grid;
   align-items: start;
   align-content: space-between;
@@ -577,6 +581,7 @@ p {
   margin-bottom: 15rem;
 }
 
+
 .path-split {
     width: 120px;
     height: 0.19px;
@@ -587,25 +592,25 @@ p {
   position: relative;
   width: 100%;
   height: 100%;
-  border: 1px solid #bcdcdfFF;
-  border-radius: 8px 8px 8px 8px;
-  opacity: 0.8;
+  border: 1px solid rgba(188, 220, 223, 0.8);
+  border-radius: 8px;
   display: flex;
   align-items: center;
-  align-content: stretch;
   justify-content: space-around;
   row-gap: 13px;
-  padding: 24px 0px 24px 0px;
+  padding: 24px 0px;
   flex-direction: column-reverse;
-  flex-wrap: nowrap;
-  flex-grow: 1;
-  grid-column: auto;
-  grid-row: auto;
   transition: 0.25s;
+}
+
+.experience {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
+  z-index: 1;
 }
 .experience:hover {
   flex-wrap: wrap;
-  box-shadow: 0px 0px 20px 0px rgba(255, 128, 43, 0.563);
+  box-shadow: 0px 0px 20px 0px rgba(31, 107, 80);
   background: #013e33a7;
   border: 1px solid #f2e0df;
 }
