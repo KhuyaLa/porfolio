@@ -16,6 +16,9 @@
     background: rgb(13, 123, 96);
     border-radius: 8px;
 } */
+body {
+  overflow-x: hidden;
+}
 main {
     display: flex;
     flex-direction: column;
