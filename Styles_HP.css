@@ -223,7 +223,8 @@ article {
  
 .about-me-description {
     font-size: 24px;
-    width: 782px;
+    /*width: 782px;*/
+    width: 95%;
 }
 article {
     height: auto;
