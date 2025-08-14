@@ -17,11 +17,18 @@
     border-radius: 8px;
 } */
 
-.body-frame {
+
+header {
+  position: sticky;
+  top: 0;
+}
+body {  
   overflow-x: hidden;
 }
-main {  
-  margin-bottom: 4rem;
+
+main {
+  min-height: fit-content;
+  padding-bottom: 3em;
 }
 
 .albums-header{
@@ -62,7 +69,7 @@ main {
     align-items: start;
     align-content: stretch;
     justify-content: start;
-    gap: 12px;
+    gap: 13px;
     z-index: 2;
     margin-bottom: -2.5rem;
 }
@@ -93,7 +100,7 @@ a {
 .album-title-frame {
     width: fit-content;
     border-radius: 4px;
-    border: 1px solid #0a6b5aFF;
+    border: 1px solid #ff812b;
     backdrop-filter: blur(2px);
     display: flex;
     flex-wrap: wrap;
@@ -101,6 +108,13 @@ a {
     align-items: center;
     justify-content: center;
     padding: 12px 24px;
+
+    transition: 0.25s;
+}
+.album-title-frame:hover{
+  border: 1px solid #e3b8b8;
+  box-shadow: 0px 0px 10px 0px #ff802b93;
+  background: #00333284;
 }
 
 .swiper-slide > video {
@@ -172,7 +186,7 @@ a {
     width: 5px;
     height: 5px;
 }
-main::after {
+#album-1st::after {
     content: '';
     background: #bdcdcf;
     mask-image: url(https://64.media.tumblr.com/1af4cd8dea82c86d7ff2f98201744480/63c89bc51636409a-ac/s2048x3072/12262d78f6b1fd3d638ef08d2eca0cbcbb43075a.pnj);
@@ -186,8 +200,12 @@ main::after {
     top: -23em;
     right: -3rem;
     z-index: 0;
+    pointer-events: none;
 }
-main::before {
+#album-last{
+  z-index: 0;
+}
+#album-last::before {
     content: '';
     background: #bdcdcf;
     mask-image: url(https://64.media.tumblr.com/86fdf4b5b8059d0f9963d5f84bf125e9/63c89bc51636409a-2e/s2048x3072/89fc9e6bf66dd790cc82443a0858c465ccdef741.pnj);
@@ -201,6 +219,17 @@ main::before {
     bottom: -13rem;
     left: -10rem;
     z-index: 0;
+}
+
+@media  screen and (max-width:1080px){
+  #album-last::before{
+    left: -3rem;
+    bottom: 3em;
+  }
+  #album-1st::after{
+    top: -5rem;
+    right: -1em;
+  }
 }
 
 @media  screen and (max-width:720px) {
@@ -218,14 +247,6 @@ main::before {
   }
   .swiper-button-prev{
     translate: -0.5rem;
-  }
-  main::before{
-    left: -5rem;
-    bottom: 3em;
-  }
-  main::after{
-    top: -8rem;
-    right: -2em;
   }
 }
 @media  screen and (max-width:500px) {
@@ -249,7 +270,7 @@ main::before {
   .swiper-button-prev{
     translate: -1rem;
   }
-  main::after, main::before{
+  #album-1st::after, #album-last::before{
     width: 80%;
   }
 }
