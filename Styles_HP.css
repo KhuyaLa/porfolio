@@ -5,6 +5,7 @@ html, body {
   min-height: 100%;
   min-width: 100%;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 .text-node { background-clip: text !important; -webkit-background-clip: text !important; }
@@ -16,7 +17,6 @@ body {
   font-family: 'Montserrat';
   background: linear-gradient(to bottom, rgba(0, 51, 50, 1) 7.000000000000001%,rgba(3, 76, 54, 1) 100%);
   z-index: 0;
-  overflow-x: hidden;
 }
 .body-frame {
   display: flex;
@@ -30,7 +30,8 @@ body {
   align-items: center;
   align-content: stretch;
   justify-content: start;
-  row-gap: 92.33px;
+  /*row-gap: 92.33px;*/
+  row-gap: 4em;
   padding: 46px 0px 0px 0px;
   z-index: 0;
   flex-direction: column;
@@ -61,7 +62,7 @@ a{
 
 .body-big {
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 350;
     line-height: 1.4;
     letter-spacing: 0.2px;
     text-decoration: none;
@@ -78,7 +79,7 @@ a{
 .logo {
   width: 36px;
   height: 36px;
-  background: linear-gradient(to bottom right, #e3b8b8 0%,#ff8128 150%);
+  background: linear-gradient(to bottom right, #ff812b 0%,#e3b8b8 150%);
   mask-image: url(https://64.media.tumblr.com/d03ab4ed4071d023f940d5155bcf2a02/6b2835ec384cf491-a5/s2048x3072/45985b6d8fc348195961b9a235dac7c8a308a854.pnj);
   mask-size: cover;
   flex-shrink: 0;
@@ -110,17 +111,16 @@ nav {
     justify-content: space-between;
     column-gap: 29;
 }
+nav div{
+  background: #ff812b;
+}
 .rect-border-side {
-  width: 1px;
+  width: 1.5px;
   height: 14px;
-  background: #8dcdcf80;
-  flex-shrink: 0;
 }
 .rect-border-betw {
-    width: 0.5px;
-  height: 6px;
-  background: #8dcdcf80;
-  flex-shrink: 0;
+    width: 1px;
+  height: 6px; /*#8dcdcf80*/
 }
 .pagelink-button {
   background-color: rgba(255, 255, 255, 0);
@@ -145,7 +145,7 @@ nav {
     line-height: 1.2;
     text-decoration: none;
     text-transform: uppercase;
-    color: rgba(189, 205, 207, 1);
+    color: #bdcdcf;
     transition: 250ms ease;
 }
 /*interact*/
@@ -213,11 +213,12 @@ article {
     margin: 0px;
     height: 72px;
     text-decoration: none;
-    font-family: 'inter';
+    font-family: 'Montserrat';
     font-style: normal;
     font-size: 60px;
     font-weight: 800;
     text-transform: unset;
+    color: #ff812b ;
  }
  
 .about-me-description {
@@ -241,7 +242,7 @@ article {
 }
 .svg-small {
   height: 24px;
-  transition: 80ms ease;
+  transition: 0.25s ease;
 }
 li,.info-row {
     list-style-type: none;
@@ -257,10 +258,10 @@ li,.info-row {
 p.text-node.body-medium-light{
   transition: 0.25s ease;
 }
-p.text-node.body-medium-light:hover{
+.info-row:hover p.text-node.body-medium-light{
   font-weight: 500;
 }
-.svg-small:hover {
+.info-row:hover .svg-small {
   transform: scale(1.15);
 }
 
@@ -325,7 +326,7 @@ p {
 .small-75dd175486a4 {
   width: 320px;
   height: 1px;
-  background: #8dcdcf80;
+  background: #ff812b ;
   border-radius: 0px 0px 0px 0px;
   flex-shrink: 0;
 }
@@ -349,7 +350,7 @@ p {
 .medium-75dd08df2353 {
   width: 480px;
   height: 2px;
-  background: #8dcdcf80;
+  background: #ff812b ;
   border-radius: 0px 0px 0px 0px;
   flex-shrink: 0;
 }
@@ -358,7 +359,8 @@ p {
 .big-75dce70b3bbf {
   width: 640px;
   height: 4px;
-  background: #8dcdcf80;
+  /*background: #8dcdcf80;*/
+  background: #ff812b ;
   border-radius: 0px 0px 0px 0px;
   flex-shrink: 0;
 }
@@ -514,7 +516,7 @@ p {
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    color: #f2e0df;
+    color: #ff812b;
     transition: 100ms ease;   
 
 }
@@ -593,14 +595,15 @@ p {
 .path-split {
     width: 120px;
     height: 0.19px;
-    background-color:   #bcdcdfFF;
+    background-color:   #ff812b;
     opacity: 50;
+    transition: 0.25s;
 }
 .experience {
   position: relative;
   width: 100%;
   height: 100%;
-  border: 1px solid rgba(188, 220, 223, 0.8);
+  border: 1px solid #ff812b;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -616,11 +619,15 @@ p {
   backdrop-filter: blur(10px);
   z-index: 1;
 }
+
 .experience:hover {
   flex-wrap: wrap;
-  box-shadow: 0px 0px 20px 0px rgba(31, 107, 80);
+  box-shadow: 0px 0px 20px 0px rgba(255, 128, 43, 0.5);
   background: #013e33a7;
-  border: 1px solid #f2e0df;
+  border: 1px solid #e3b8b8;
+}
+.experience:hover .path-split{
+  background-color: #e3b8b8;
 }
 
 .infor{
@@ -631,6 +638,10 @@ p {
     justify-content: start;
     color: #f2e0df;
     row-gap: 6px;
+}
+.infor span p {
+  color: #f2e0df;
+  opacity: 0.75;
 }
 .Title_small {
     font-family: Jost;
@@ -660,7 +671,8 @@ footer {
   align-content: stretch;
   justify-content: center;
   gap: 36px;
-  position: relative; z-index: 1;
+  position: relative; 
+  z-index: 1;
 }
 .footer-text {
   color: #f2e0df;
@@ -682,6 +694,91 @@ footer {
   transform: scale(1.05);
   opacity: 100%;
 }
+.scroll-up {
+  opacity: 0%;
+  animation-name: appear;
+  animation-timeline: scroll(y);
+}
+
+@keyframes appear {
+  0%{
+    opacity: 0%;
+    display: flex;
+
+  justify-content: center;
+  align-items: center;
+  width: 1.5em;
+  transform: scale(1.25);
+  aspect-ratio: 1/1;
+  border-radius: 0.1em;
+  outline: 1px solid #bdcdcf;
+  color: #bdcdcf;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 3;
+  background: rgba(0, 51, 50, 0.3);
+  backdrop-filter: blur(3px);
+  }
+  10%{
+    opacity: 0%;
+    display: flex;
+
+  justify-content: center;
+  align-items: center;
+  width: 1.5em;
+  transform: scale(1.25);
+  aspect-ratio: 1/1;
+  border-radius: 0.1em;
+  outline: 1px solid #bdcdcf;
+  color: #bdcdcf;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 3;
+  background: rgba(0, 51, 50, 0.3);
+  backdrop-filter: blur(3px);
+  }
+  15%{
+    opacity: 70%;
+    display: flex;
+
+  justify-content: center;
+  align-items: center;
+  width: 1.5em;
+  transform: scale(1.25);
+  aspect-ratio: 1/1;
+  border-radius: 0.1em;
+  outline: 1px solid #bdcdcf;
+  color: #bdcdcf;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 3;
+  background: rgba(0, 51, 50, 0.3);
+  backdrop-filter: blur(3px);
+  }
+  100%{
+    opacity: 70%;
+    display: flex;
+
+  justify-content: center;
+  align-items: center;
+  width: 1.5em;
+  transform: scale(1.25);
+  aspect-ratio: 1/1;
+  border-radius: 0.1em;
+  outline: 1px solid #bdcdcf;
+  color: #bdcdcf;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 3;
+  background: rgba(0, 51, 50, 0.3);
+  backdrop-filter: blur(3px);
+  }
+}
+
 
 @media screen and (max-width:1400px) {
     .about-me-description{
