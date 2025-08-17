@@ -22,7 +22,7 @@ header {
   position: sticky;
   top: 0;
 }
-body {  
+.body{  
   overflow-x: hidden;
 }
 
@@ -88,6 +88,20 @@ main {
     align-items: center;
     justify-content: center;
     gap: 12px;
+    position: relative;
+    background-color: #bdcdcf00;
+    transition: 0.25s;
+}
+.arrowright svg path{
+  transition: 0.25s;
+}
+.see-more-click:hover, .see-more-click:hover .arrowright svg path{
+  color: #ff812b;
+  mix-blend-mode: overlay;
+  stroke: #ff812b !important;
+}
+.fills{
+  stroke-width: 0;
 }
 a {
     text-decoration: none;
@@ -116,7 +130,9 @@ a {
   box-shadow: 0px 0px 10px 0px #ff802b93;
   background: #00333284;
 }
-
+.album-list{
+  z-index: 0;
+}
 .swiper-slide > video {
     width: 100%;
     aspect-ratio: 4/3;
@@ -165,14 +181,18 @@ a {
 }
 
 .swiper-slide-button {
-    transform: scale(0.75);
+    transform: scale(1);
     color: #bdcdcf;
     width: fit-content;
     height: fit-content;
-    padding: 1em;
+    padding: 0.6em;
     backdrop-filter: blur(10px);
     border-radius: 4px;
     background: #034c366f;
+    z-index: 2;
+}
+.swiper-button-next:after, .swiper-button-prev:after{
+  transform: scale(0.8);
 }
 
 .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
@@ -198,7 +218,7 @@ a {
     aspect-ratio: 2/3;
     position: absolute;
     top: -23em;
-    right: -3rem;
+    right: 0;
     z-index: 0;
     pointer-events: none;
 }
@@ -228,7 +248,7 @@ a {
   }
   #album-1st::after{
     top: -5rem;
-    right: -1em;
+    right: 0em;
   }
 }
 
