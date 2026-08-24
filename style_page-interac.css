@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    --border-rad-big: 5vw;
+    --border-rad-medium: 2.6vw;
+    --border-rad-small: 0.5vw;
+
+    --background-color: #cfbb9aFF;
+    --background-color-50: #cfbb9a80;
+    --highlight-color: #e7d8c5FF;
+    --dark-brown:#4b3d1a;
+    --dark-brown-50:#4b3d1aCC;
+    --dark-green: #374025FF;
+    --dark-green-50: #37402580;
+    --mud-green: #899064;
+    --mud-green-50: #89906480;
+    --light-green: #b8c57f;
+    --light-green-50: #b8c57f80;
+
+    --radius-big: 5vw;
+    --distant-gigan:24rem;
+    --distant-huge: 10vw;
+    --distant-big: 6rem;
+    --distant-medium: 3vw;
+    --distant-medium-less: 2vw;
+    --distant-small: 1vw;
+    --distant-small-less: 0.5vw;
+    --stroke-width-def: 4px;
+
+    --side-medium: 0.075vw;
+
+    --fixed-size-med: 10rem;
+    --fixed-size-sma: 5rem;
+    --fixed-size-gap-med: 20px;
+    --fixed-size-gap-sma: 10px;
+    --fixed-size-gap-tyn: 5px;
+}
+
+.signature object{
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.sticky .signature object{
+  opacity: 0;
+}
+
+.material-icons {
+  font-size: 32px;
+}
+.scroll-up {
+  /* Base Layout Styles */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 3;
+  width: var(--border-rad-medium);
+  aspect-ratio: 1/1;
+  border-radius: var(--border-rad-small);
+  outline: var(--stroke-width-def) solid var(--dark-green-50);
+  background: var(--background-color-50);
+  backdrop-filter: blur(3px);
+  transform: scale(1.25);
+  
+  /* Animation setup */
+  opacity: 0;
+  color: var(--dark-green-50);
+  animation-name: appear;
+  animation-timeline: scroll(y);
+}
+
+/* Simplified Animation: Only animate properties that actually change */
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+    color: var(--dark-green-50);
+  }
+  15%, 100% {
+    opacity: 0.7;
+    color: var(--dark-green-50);
+  }
+}
+@media screen and (max-width: 1326px) {
+  .contacts-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    align-content: center;
+    justify-content: center;
+
+    width: fit-content;
+    
+  } 
+}
+@media screen and (max-width:1280px) {
+  .body-small{
+    font-size: 1em;
+  }
+  .body-small-bold{
+    font-size: 1em;
+  }
+  .body-regular {
+    font-size: 1.2em;
+    line-height: 1.4em;
+  }
+  .body-bold{
+    font-size: 1.2em;
+  }
+  .header-2 {
+    font-size: 1.3em;
+  }
+
+  :root{
+    --distant-gigan: 20rem;
+  }
+
+  .sowftwares-container{
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+    grid-template-rows: 0.7fr 0.7fr;
+    row-gap: 1vw;
+    column-gap: 1vw;
+  }
+  .skill-image object{
+    width: 6rem;
+  }
+  .skill-each{
+    width: 45%;
+  }
+  .software-each {
+    width: max-content;
+  }
+  .sowftwares-container .software-each object{
+    width: 5rem;
+  }
+  .work-images-smaller .in-depth-small-imgs-2{
+    width: 18%;
+  }
+}
+
+@media screen and (max-width:1116px) {
+  .body-small{
+    font-size: 0.8em;
+  }
+  .body-small-bold{
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width:1090px) {
+  .contacts-container{
+    flex-direction: column;
+    row-gap: var(--distant-small);
+    width: fit-content;
+    border-radius: 1em;
+    padding: var(--distant-medium-less);
+  }
+  .sowftwares-container{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .skills-container{
+    gap: var(--distant-small-less);
+  }
+  .skill-each{
+    width: 100%;
+  }
+  .skill-each .skill-image{
+    width: 40%;
+  }
+  .mascot-container{
+    width: 40%;
+  }
+
+  :root {
+    --fixed-size-med: 24vw;
+    --fixed-size-sma: 12vw;
+
+    --distant-gigan: 24vw;
+  }
+}
+
+@media screen and (max-width:900px){
+  :root{
+    --border-rad-medium: 1.8em;
+    --distant-gigan: 28vw;
+  }
+}
+
+@media screen and (max-width:775px){
+  :root{    
+    --fixed-size-med: 32vw;
+    --fixed-size-sma: 16vw;
+  }
+}
+
+@media screen and (max-width:700px){
+  :root{
+    --border-rad-medium: 1.8em;
+    --distant-gigan: 32vw;
+    --fixed-size-med: 36vw;
+    --fixed-size-sma: 18vw;
+  }
+}
+
+@media screen and (max-width:540px){
+  :root{
+    --distant-gigan: 40vw;
+    --fixed-size-med: 40vw;
+    --fixed-size-sma: 20vw;
+  }
+}
+
+
+@media screen and (max-width:480px){
+  :root{
+    --distant-gigan: 50vw;
+    --fixed-size-med: 46vw;
+    --fixed-size-sma: 23vw;
+  }
+}
+
