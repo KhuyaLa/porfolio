@@ -203,14 +203,21 @@
     --fixed-size-med: 32vw;
     --fixed-size-sma: 16vw;
   }
+  .body-regular {
+    font-size: 1.2em;
+    line-height: 1.2em;
+  }
+  .body-bold{
+    font-size: 1.2em;
+  }
 }
 
 @media screen and (max-width:700px){
   :root{
     --border-rad-medium: 1.8em;
     --distant-gigan: 32vw;
-    --fixed-size-med: 36vw;
-    --fixed-size-sma: 18vw;
+    --fixed-size-med: 28vw;
+    --fixed-size-sma: 14vw;
   }
   .sowftwares-container{
     grid-template-columns: 5rem 5rem;
@@ -222,13 +229,35 @@
   .expertises-sheet{
     gap: 2em;
   }
+  .body-bold, .body-regular{
+    font-size: 1.2em;
+    line-height: 1.1em;
+  }
 }
 
-@media screen and (max-width:540px){
+@media screen and (max-width:651px){
+  .body-bold, .body-regular{
+    font-size: 1em;
+  }
   :root{
-    --distant-gigan: 40vw;
-    --fixed-size-med: 40vw;
-    --fixed-size-sma: 20vw;
+    --fixed-size-med: 24vw;
+    --fixed-size-sma: 12vw;
+  }
+  .experiences{
+    width: 100%;
+  }
+  .experience-row{
+    width: 100%;
+  }
+  .contacts-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .circle-big{width: 1rem; height: 1rem;}
+  .circle-medium{width: 0.8rem; height: 0.8rem;}
+  .circle-small{width: 0.4rem; height: 0.4rem;}
+  .experiences-title{
+    padding-inline: var(--distant-medium);
   }
 }
 
@@ -238,6 +267,15 @@
     --distant-gigan: 50vw;
     --fixed-size-med: 46vw;
     --fixed-size-sma: 23vw;
+  }
+  h3{
+    font-size: 1.6em;
+  }
+  .experiences-title{
+    padding-inline: var(--distant-small);
+  }
+  .sowftwares-container .software-each object{
+    width: 3em;
   }
 }
 
