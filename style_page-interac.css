@@ -90,6 +90,7 @@
     color: var(--dark-green-50);
   }
 }
+
 @media screen and (max-width: 1326px) {
   .contacts-container{
     display: grid;
@@ -210,6 +211,16 @@
     --distant-gigan: 32vw;
     --fixed-size-med: 36vw;
     --fixed-size-sma: 18vw;
+  }
+  .sowftwares-container{
+    grid-template-columns: 5rem 5rem;
+    grid-template-rows: 5rem 5rem 5rem 5rem;
+    column-gap: 0.5em;
+    row-gap: 0.5em;
+    width: 10.5em;
+  }
+  .expertises-sheet{
+    gap: 2em;
   }
 }
 
