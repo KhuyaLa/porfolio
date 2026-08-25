@@ -1,10 +1,3 @@
-const header = document.querySelector('#common-header');
-
-window.addEventListener('load', function (){
-    header.innerHTML = sketch.html;
-})
-
-
 class MyHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -13,22 +6,19 @@ class MyHeader extends HTMLElement {
                     <object data="Khuya signature.svg" type="image/svg+xml"></object>
                 </div>
                 <nav class="nav-bar">
-                    <button class="nav-text"><a href="index.html"><p>Home</p></a></button>
-                    <p class="nav-text">|</p>
-                    <button class="nav-text"><a href="Work-GameArt.html"><p>Works</p></a></button>
-                    <p class="nav-text">|</p>
-                    <button class="nav-text"><a href="#"><p>Social media</p></a></button>
+                    <a href="index.html" class="nav-text">Home</a>
+                    <span class="nav-text">|</span>
+                    <a href="Work-GameArt.html" class="nav-text">Works</a>
+                    <span class="nav-text">|</span>
+                    <a href="#my-footer" class="nav-text">Social media</a>
                 </nav>
             </header>
         `;
 
         const currentPath = window.location.pathname.split('/').pop();
-        const navButtons = this.querySelectorAll('.nav-bar button');
+        const navLinks = this.querySelectorAll('.nav-bar a');
 
-        navButtons.forEach(button => {
-            const link = button.querySelector('a');
-            if (!link) return;
-
+        navLinks.forEach(link => {
             const href = link.getAttribute('href');
 
             // 1. Check for Home
@@ -38,9 +28,9 @@ class MyHeader extends HTMLElement {
             const isWorks = (href === 'Work-GameArt.html') && currentPath.startsWith('Work-');
 
             if (isHome || isWorks) {
-                button.classList.add('nav-active');
+                link.classList.add('nav-active');
             } else {
-                button.classList.remove('nav-active');
+                link.classList.remove('nav-active');
             }
         });
     }
@@ -54,21 +44,15 @@ class MyFooter extends HTMLElement {
                     <p class="link">This website was created by Phung Tran Hieu - Khuya</p>
                     <div class="social-media-container">
                         <a href="https://youtube.com/@ngantoi-khuya?si=EOz1udQk-3HJkzpl" target="_blank" class="social-media-icon"><i class="fa-brands fa-square-youtube"></i></a>
-
                         <a href="https://www.facebook.com/HieuPhungeightpi7" target="_blank" class="social-media-icon"><i class="fa-brands fa-square-facebook"></i></a>
-
                         <a href="https://khuyaart7.tumblr.com/" target="_blank" class="social-media-icon"><i class="fa-brands fa-square-tumblr"></i></a>
-
                         <a href="https://www.instagram.com/im.empty_03/" target="_blank" class="social-media-icon"><i class="fa-brands fa-square-instagram"></i></a>
                     </div>
                 </div>
             </footer> 
-        `
+        `;
     }
 }
-
-customElements.define('my-header', MyHeader)
-customElements.define('my-footer', MyFooter)
 
 class MyNavWork extends HTMLElement {
     connectedCallback() {
@@ -86,28 +70,33 @@ class MyNavWork extends HTMLElement {
             </nav>
         `;
 
-        // Get current URL filename (e.g., "Work-GameArt.html")
         const currentPath = window.location.pathname.split('/').pop();
-        const links = this.querySelectorAll('.nav-bar-works a');
+        const links = this.querySelectorAll('.nav-bar-works button a');
 
         links.forEach(link => {
-            //const button = link.parentElement;
+            const button = link.parentElement;
             // Loại bỏ '.html' khỏi href nếu có để so sánh chính xác
             const linkHref = link.getAttribute('href').replace(/\.html$/, '');
 
             if (currentPath === linkHref || (currentPath === '' && linkHref === 'Work-GameArt.html')) {
-                link.classList.add('b-active');
+                button.classList.add('b-active');
             } else {
-                link.classList.remove('b-active');
+                button.classList.remove('b-active');
             }
         });
     }
 }
 
+// Define custom elements
+customElements.define('my-header', MyHeader);
+customElements.define('my-footer', MyFooter);
 customElements.define('my-nav-work', MyNavWork);
 
+// Sticky scroll listener with null check
 window.addEventListener('scroll', function() {
     const header = document.getElementById('header-sticky');
+    if (!header) return;
+
     if (window.scrollY > 64) {
         header.classList.add('sticky');
     } else {
