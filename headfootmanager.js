@@ -91,14 +91,14 @@ class MyNavWork extends HTMLElement {
         const links = this.querySelectorAll('.nav-bar-works a');
 
         links.forEach(link => {
-            const button = link.parentElement;
-            const linkHref = link.getAttribute('href');
+            //const button = link.parentElement;
+            // Loại bỏ '.html' khỏi href nếu có để so sánh chính xác
+            const linkHref = link.getAttribute('href').replace(/\.html$/, '');
 
-            // Add active class if link matches current page or defaults to GameArt
             if (currentPath === linkHref || (currentPath === '' && linkHref === 'Work-GameArt.html')) {
-                button.classList.add('b-active');
+                link.classList.add('b-active');
             } else {
-                button.classList.remove('b-active');
+                link.classList.remove('b-active');
             }
         });
     }
