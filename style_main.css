@@ -323,6 +323,9 @@ section{
     line-height: 1.2;
     color: var(--dark-brown);
 }
+.contact-icon{
+    color: var(--dark-brown);
+}
 
 /*expertises style*/
 .expertises {
@@ -359,6 +362,8 @@ section{
     align-content: stretch;
     justify-content: start;
     row-gap: var(--distant-medium);
+}
+.expertises-title-text{
     color: var(--dark-green);
 }
 .expertises-title .circles div{    
@@ -464,6 +469,9 @@ section{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+.works-title-text{
+    color: var(--dark-brown);
 }
 
 .works-sheet{
