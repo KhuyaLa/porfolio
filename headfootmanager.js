@@ -76,7 +76,7 @@ class MyNavWork extends HTMLElement {
         links.forEach(link => {
             const button = link.parentElement;
             // Loại bỏ '.html' khỏi href nếu có để so sánh chính xác
-            const linkHref = link.getAttribute('href').//replace(/\.html$/, '');
+            const linkHref = link.getAttribute('href')//.replace(/\.html$/, '');
 
             if (currentPath === linkHref || (currentPath === '' && linkHref === 'Work-GameArt.html')) {
                 button.classList.add('b-active');
