@@ -1,3 +1,21 @@
+class MyFooter extends HTMLElement {
+    connectedCallback(){
+        this.innerHTML = `
+            <footer class="port-footer">
+                <div class="footer-contents" id="footer">
+                    <p class="link">This website was created by Phung Tran Hieu - Khuya</p>
+                    <div class="social-media-container">
+                        <a href="https://youtube.com/@ngantoi-khuya?si=EOz1udQk-3HJkzpl" target="_blank" class="social-media-icon"><i class="fa-brands fa-square-youtube"></i></a>
+                        <a href="https://www.facebook.com/HieuPhungeightpi7" target="_blank" class="social-media-icon"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="https://khuyaart7.tumblr.com/" target="_blank" class="social-media-icon"><i class="fa-brands fa-square-tumblr"></i></a>
+                        <a href="https://www.instagram.com/im.empty_03/" target="_blank" class="social-media-icon"><i class="fa-brands fa-square-instagram"></i></a>
+                    </div>
+                </div>
+            </footer> 
+        `;
+    }
+}
+
 class MyHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -10,7 +28,7 @@ class MyHeader extends HTMLElement {
                     <span class="nav-text">|</span>
                     <a href="Work-GameArt.html" class="nav-text">Works</a>
                     <span class="nav-text">|</span>
-                    <a href="#my-footer" class="nav-text">Social media</a>
+                    <a href="#footer" class="nav-text">Social media</a>
                 </nav>
             </header>
         `;
@@ -36,24 +54,6 @@ class MyHeader extends HTMLElement {
     }
 }
 
-class MyFooter extends HTMLElement {
-    connectedCallback(){
-        this.innerHTML = `
-            <footer class="port-footer">
-                <div class="footer-contents">
-                    <p class="link">This website was created by Phung Tran Hieu - Khuya</p>
-                    <div class="social-media-container">
-                        <a href="https://youtube.com/@ngantoi-khuya?si=EOz1udQk-3HJkzpl" target="_blank" class="social-media-icon"><i class="fa-brands fa-square-youtube"></i></a>
-                        <a href="https://www.facebook.com/HieuPhungeightpi7" target="_blank" class="social-media-icon"><i class="fa-brands fa-square-facebook"></i></a>
-                        <a href="https://khuyaart7.tumblr.com/" target="_blank" class="social-media-icon"><i class="fa-brands fa-square-tumblr"></i></a>
-                        <a href="https://www.instagram.com/im.empty_03/" target="_blank" class="social-media-icon"><i class="fa-brands fa-square-instagram"></i></a>
-                    </div>
-                </div>
-            </footer> 
-        `;
-    }
-}
-
 class MyNavWork extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -74,14 +74,14 @@ class MyNavWork extends HTMLElement {
         const links = this.querySelectorAll('.nav-bar-works button a');
 
         links.forEach(link => {
-            const button = link.parentElement;
+            //const button = link.parentElement;
             // Loại bỏ '.html' khỏi href nếu có để so sánh chính xác
             const linkHref = link.getAttribute('href')//.replace(/\.html$/, '');
 
             if (currentPath === linkHref || (currentPath === '' && linkHref === 'Work-GameArt.html')) {
-                button.classList.add('b-active');
+                link.classList.add('b-active');
             } else {
-                button.classList.remove('b-active');
+                link.classList.remove('b-active');
             }
         });
     }
