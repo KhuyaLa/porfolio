@@ -822,14 +822,26 @@ footer {
     font-size: 3rem;
     color: var(--background-color);
 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     transition: transform 0.3s ease;
 }
 .social-media-container .social-media-icon .fa-brands {
     width: 100%;
     height: auto;
 }
+.social-media-container .social-media-icon svg {
+    width: 2.65rem;
+    height: 2.65rem;
+    fill: var(--background-color); /* Matches your font icon colors */
+    vertical-align: -0.075em;
+    transition: fill 0.3s ease;
+}
 
 .social-media-container .social-media-icon:hover {
     transform: scale(1.125);
 }
+
 
